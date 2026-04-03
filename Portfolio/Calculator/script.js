@@ -12,12 +12,23 @@ function updateDisplay() {
 }
 
 function appendNumber(number) {
+    // 1. Agar dot (.) pehle se hai, toh dusra dot mat aane do
+    if (number === '.' && currentInput.includes('.')) return;
+
+    // 2. Agar screen '0' par hai ya result ke baad reset karni hai
     if (currentInput === '0' || shouldResetScreen) {
-        currentInput = number;
+        // Agar user ne '.' dabaya toh use '0.' bana do
+        if (number === '.') {
+            currentInput = '0.';
+        } else {
+            currentInput = number;
+        }
         shouldResetScreen = false;
     } else {
+        // Baaki numbers ko normal tarike se jodo
         currentInput += number;
     }
+    
     updateDisplay();
 }
 
