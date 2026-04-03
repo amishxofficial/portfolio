@@ -1,0 +1,1014 @@
+          :root {   
+    --bg: #0f172a;
+    --bg-alt: #0b1120;
+    --primary: #00d2ff;
+    --secondary: #3a7bd5;
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+html, body {
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+
+/* Navigation */
+nav { display: flex; justify-content: space-between; padding: 25px 10%; position: fixed; width: 100%; top: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); z-index: 1000; }
+.logo { font-size: 1.8rem; font-weight: 800; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: white; transition: 0.3s; }
+.btn-nav { border: 1px solid var(--primary); padding: 5px 15px; border-radius: 4px; color: var(--primary) !important; }
+
+/* Hero Section */
+.fullscreen { min-height: 100vh; display: flex; align-items: center; }
+.hero { padding: 0 10%; }
+.hero-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; width: 100%; align-items: center; }
+.hero-text h1 { font-size: 4rem; line-height: 1.1; margin: 15px 0; }
+.highlight { color: var(--primary); }
+.floating-text { animation: float 4s ease-in-out infinite; }
+
+/* Software Developer Text */
+.role-text { font-size: 1.5rem; color: var(--secondary); font-weight: 700; margin-bottom: 20px; }
+
+/* --- FULL SYMMETRICAL AVAILABILITY SECTION --- */
+.availability-section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.availability-card-wrapper {
+    background: rgba(15, 15, 20, 0.6);
+    padding: 50px 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 900px;
+    width: 95%;
+}
+
+.availability-title {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+}
+
+.availability-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* BOX ALIGNMENT FIX */
+.avail-item.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Dots ko top se align rakhega */
+    width: 150px;
+    height: 140px; /* Thodi zyada height stability ke liye */
+    padding: 25px 15px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+}
+
+/* DOT ALIGNMENT FIX */
+.dot { 
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 15px; /* Dot ke niche fix gap */
+    flex-shrink: 0; 
+}
+
+/* TEXT ALIGNMENT FIX */
+.item-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.3;
+    text-align: center;
+    margin-top: auto; /* Agar text 1 line ka hai toh bhi stable rakhega */
+    margin-bottom: auto;
+}
+
+/* 1. Base Dot Style */
+.dot { 
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px; 
+    flex-shrink: 0;
+}
+
+/* 2. Unified Box & Dot Colors (New Palette) */
+
+/* Freelance - Original Parrot Green */
+.avail-item.box.freelance { 
+    background: rgba(57, 255, 20, 0.1); 
+    border: 1px solid rgba(57, 255, 20, 0.2); 
+}
+
+.avail-item.box.freelance .dot { 
+    background: #39FF14; 
+    box-shadow: 0 0 15px #39FF14, 0 0 30px rgba(57, 255, 20, 0.3); 
+}
+
+/* 2. Full-time - Bright Blue */
+.avail-item.box.fulltime { 
+    background: rgba(0, 191, 255, 0.08); /* Lighter Blue */
+    border: 1px solid rgba(0, 191, 255, 0.2); 
+}
+.avail-item.box.fulltime .dot { 
+    background: #00BFFF; 
+    box-shadow: 0 0 15px #00BFFF; 
+}
+
+/* 3. Consulting - Purple/Violet */
+.avail-item.box.consulting { 
+    background: rgba(191, 0, 255, 0.08); /* Lighter Purple */
+    border: 1px solid rgba(191, 0, 255, 0.2); 
+}
+.avail-item.box.consulting .dot { 
+    background: #BF00FF; 
+    box-shadow: 0 0 15px #BF00FF; 
+}
+
+/* 4. Collaboration - Orange */
+.avail-item.box.collaboration { 
+    background: rgba(255, 165, 0, 0.08); /* Lighter Orange */
+    border: 1px solid rgba(255, 165, 0, 0.2); 
+}
+.avail-item.box.collaboration .dot { 
+    background: #FFA500; 
+    box-shadow: 0 0 15px #FFA500; 
+}
+
+/* --- Hover Effect --- */
+.avail-item.box:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Isometric Visual */
+.hero-visual { position: relative; height: 400px; display: flex; justify-content: center; align-items: center; perspective: 1000px; }
+.iso-box { position: relative; width: 300px; height: 200px; transform: rotateX(50deg) rotateZ(-30deg); transform-style: preserve-3d; }
+.laptop-base { position: absolute; width: 200px; height: 140px; background: #1e293b; border-radius: 10px; border-bottom: 5px solid var(--primary); box-shadow: 20px 20px 50px rgba(0,0,0,0.5); }
+.laptop-screen { position: absolute; width: 200px; height: 130px; background: #0f172a; border: 2px solid #334155; border-radius: 10px; transform: rotateX(-90deg) translateY(-65px) translateZ(65px); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); }
+.float-icon { position: absolute; font-size: 2.5rem; color: var(--primary); animation: iconFloat 3s ease-in-out infinite; }
+.icon-1 { top: -50px; left: 0; }
+.icon-2 { top: 0; left: 220px; animation-delay: 0.5s; }
+.icon-3 { top: 100px; left: -60px; animation-delay: 1s; }
+
+/* Skills Buttons (Big) */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.skill-card { background: var(--card-bg); padding: 50px 20px; border-radius: 15px; text-align: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+.skill-card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(0,210,255,0.1); }
+.skill-card i { font-size: 3.5rem; color: var(--primary); display: block; margin-bottom: 15px; }
+.skill-card span { font-weight: 600; font-size: 1.2rem; }
+
+/* Projects Grid Styling */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 20px; }
+.project-card { background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease; position: relative; overflow: hidden; }
+.project-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 210, 255, 0.1); }
+.pj-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+.project-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--text); }
+.project-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
+.pj-tags { display: flex; gap: 10px; margin-bottom: 25px; }
+.pj-tags span { font-size: 0.75rem; background: rgba(0, 210, 255, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 50px; font-weight: 600; }
+.pj-link { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+.pj-link:hover { gap: 12px; text-shadow: 0 0 10px var(--primary); }
+
+/* Contact Buttons */
+.contact-btns { display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+.c-btn { padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: 600; color: white; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+.email { background: var(--primary); color: #000; }
+.github { background: #333; border: 1px solid #444; }
+.linkedin { background: #0077b5; }
+.c-btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
+
+/* Section & Footer */
+.section { padding: 100px 10%; }
+.bg-dark-alt { background: var(--bg-alt); }
+.section-title { font-size: 2.5rem; margin-bottom: 40px; border-left: 5px solid var(--primary); padding-left: 15px; }
+footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-alt); color: var(--text-dim); }
+
+/* Animations & Utility */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+.btn { padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+.primary { background: var(--primary); color: black; margin-right: 15px; }
+.secondary { border: 1px solid var(--primary); color: var(--primary); }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+.modal-content { background: var(--bg); margin: 15% auto; padding: 40px; border: 1px solid var(--primary); width: 400px; border-radius: 15px; text-align: center; position: relative; }
+.close { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; color: var(--primary); }
+
+/* Logo Hover Effect */
+.logo a {
+    display: inline-block;
+    transition: all 0.3s ease; /* For Smooth transition */
+    text-decoration: none;
+}
+
+.logo a:hover {
+    transform: translateY(-2px) scale(1.05); 
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.7); /* Blue neon glow */
+}
+
+/* glow effect when mouse points (amish.portfolio) */
+.logo a:hover span {
+    color: #fff !important; 
+    text-shadow: 0 0 20px #00d2ff;
+}
+
+/* --- Buttons(explore work)(download resume) Shimmer aur Glow Effect --- */
+
+/* 1. Common style for both buttons */
+.btn {
+    position: relative;
+    overflow: hidden; /* Important for keep the shining inside the button only */
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* 2. Shimmer's logic */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4), /* White shine */
+        transparent
+    );
+    transition: all 0.6s ease;
+    z-index: -1;
+}
+
+/* 3. Line goes from Left to right when hovering */
+.btn:hover::before {
+    left: 100%;
+}
+
+/* 4. button pop-up when hover */
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* 5. Primary button (Explore My Work) glow effect */
+.btn.primary:hover {
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.5);
+}
+
+/* 6. Secondary button (Get In Touch) glow */
+.btn.secondary:hover {
+    background: rgba(0, 210, 255, 0.1); /* light blue tint */
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+}
+
+/* Navigation Links Style */
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Text color change when hover */
+.nav-links a:hover {
+    color: #00d2ff; 
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+/* Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00d2ff;
+    transition: width 0.3s ease;
+}
+
+/* Line expand when mouse points */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Resume Button specific style */
+.btn.secondary i {
+    margin-right: 8px;  
+    transition: transform 0.3s ease;
+}
+
+.btn.secondary:hover i {
+    transform: translateY(3px); /*(Download vibe) */
+}
+
+.btn.secondary:hover {
+    border-color: #00d2ff;
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+/* --- ABOUT SECTION STYLES --- */
+.about-section {
+    padding: 100px 20px;
+    background: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1100px;
+    width: 90%;
+    display: flex;
+    align-items: center; /* Vertically center image & text */
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* LEFT SIDE: CONTENT */
+.about-content {
+    flex: 1; /* Takes 60% space */
+    text-align: left;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle line below title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #00d2ff;  
+    border-radius: 2px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Cyan Highlight for keywords */
+.highlight {
+    color: cyan; 
+    font-weight: 600;
+}
+
+/* RIGHT SIDE: IMAGE */
+.about-image-wrapper {
+    flex: 0 0 350px; /* Takes fixed 350px space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 180%;
+    height: auto;
+    border-radius: 20px; /* Optional: Slight rounded corners */
+    
+    /* THE SIGNATURE CYAN GLOW */
+    filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.5));
+    
+    /* Subtle Floating Animation */
+    animation: floatImage 4s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+/* Image zoom on hover */
+.about-image:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 35px rgba(0, 210, 255, 0.7));
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- CTA BUTTON STYLE --- */
+.about-cta {
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cv {
+    background: transparent;
+    color: #00d2ff;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+.btn-cv:hover {
+    background: #00d2ff;
+    color: #111; /* Dark text on bright background */
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   🛑 POORA PURANA @MEDIA HATA KAR YE DALEIN
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Pure Section ko top se itna niche karo ki Navbar se na takraye */
+    .hero {
+        padding-top: 120px !important; /* Navbar 70-80px ka hota hai, 120px safe hai */
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+    }
+
+    .hero-container {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 20px !important;
+    }
+
+    /* 2. Greeting line (// welcome_world) */
+    .greeting {
+        display: block !important;
+        font-size: 0.85rem !important; 
+        margin-bottom: 15px !important;
+        color: #00d2ff !important; 
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 3. Name Heading */
+    .hero-text h1 {
+        font-size: 1.8rem !important; /* Size control */
+        line-height: 1.2 !important;
+        margin: 10px 0 !important;
+    }
+
+    /* 4. Buttons */
+    .hero-btns .btn {
+        width: 250px !important;      /* Button ki width */
+        display: flex !important;      /* Flex use karenge centering ke liye */
+        justify-content: center !important; /* Text ko horizontally center karega */
+        align-items: center !important;    /* Text ko vertically center karega */
+        text-align: center !important;     /* Extra safety for text */
+        padding: 12px 0 !important;        /* Side padding zero kardo taaki text center mein rahe */
+        margin: 0 auto !important;
+    }
+
+    .hero-btns .btn {
+        width: 250px !important; /* Fixed width taaki dono ek jaise dikhein */
+        margin: 0 !important;
+    }
+}
+
+    /* 2. Isometric Box: Purani positions override karke center karo */
+    .iso-box {
+        /* ⚠️ DO NOT change transform or rotation here */
+        position: relative !important; 
+        margin: 0 auto !important; /* Horizontal Center */
+        left: unset !important;    /* Purani left coordinate hatao */
+        right: unset !important;   /* Purani right coordinate hatao */
+        top: 0 !important;
+        display: block !important;
+    }
+
+    /* 3. Isometric Elements Alignment reset */
+    .laptop-base, .laptop-screen {
+        margin: 0 auto !important;
+        /* Yahan purani isometric values override na karein */
+    }
+
+    /* 2. About Section Fix (Jo kat rahi thi) */
+    .about {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container {
+        display: flex !important;
+        flex-direction: column !important; /* Force Column (Side space nahi hai) */
+        align-items: center !important;
+        text-align: center;
+        width: 100% !important;
+        gap: 30px;
+    }
+
+    .about-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .about-img img {
+        width: 100% !important;
+        max-width: 280px !important; /* Photo na kat sake */
+        height: auto;
+        border-radius: 50%; /* Agar round photo hai toh */
+        margin: 0 auto;
+    }
+
+    .about-text {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* 3. Footer (Final Line Fix) */
+    footer {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 14px;
+        white-space: normal !important; /* Line wrap karega */
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+
+/* Container reset */
+.education {
+    padding: 80px 10%;
+    background: #081b29;
+    text-align: left;
+}
+
+/* Heading - Fixed Size & Position */
+.section-title, 
+.education .heading {
+    font-size: 2.5rem !important; 
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--primary); 
+    padding-left: 20px;
+    display: inline-block;
+    text-align: left;
+    text-transform: none; 
+}
+
+/* Card Styling - Same as "Available for Work" Shadow Border */
+.education-container {
+    display: flex;
+    justify-content: center;
+}
+
+.edu-card {
+    background: rgba(17, 34, 64, 0.5); /* Deep Blue/Dark theme */
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2); /* Shadow Border Effect */
+    text-align: left; 
+    transition: 0.3s;
+}
+
+.edu-card:hover {
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Header Inside Card */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.year {
+    color: #00d2ff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Green Capsule (Graduated) */
+.status-badge {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    
+    /* SAME ORIGINAL PADDING */
+    padding: 5px 15px; 
+    
+    border-radius: 20px;
+    
+    /* SAME ORIGINAL FONT SIZE */
+    font-size: 0.8rem; 
+    
+    border: 1px solid #00ff88;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    /* Icon alignment */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Minimalist gap between outline cap and word */
+    gap: 6px; 
+}
+
+/* Specific SVG alignment inside badge for visual balance */
+.status-badge svg {
+    margin-bottom: 2px; /* Small visual center fix */
+}
+
+/* Icon specific styling inside badge */
+.status-badge i {
+    font-size: 1rem; 
+}
+
+/* BCA Title & University */
+.edu-card h3 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.university {
+    font-size: 1.2rem;
+    color: #ccd6f6;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* The Paragraph - Readable Size */
+.edu-card p {
+    font-size: 1.1rem; 
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+/* Instagram Button (Outline Style) */
+.c-btn.instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* Padding & Width fix */
+    padding: 12px 22px; 
+    min-width: 150px; 
+    
+    /* Shape: Little Curved Rectangle */
+    border-radius: 10px; 
+    
+    /* Colors: No Interior Color */
+    background: transparent;
+    border: 2px solid var(--primary); /* Cyan Outline */
+    color: var(--primary);
+    
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover Effect: Glow Only */
+.c-btn.instagram:hover {
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--primary);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Icon size inside Instagram button */
+.c-btn.instagram i {
+    font-size: 1.2rem;
+}
+
+footer {
+    position: relative;
+    padding: 60px 10% 30px; 
+    background: var(--bg-alt);
+    border-top: 1px solid rgba(0, 210, 255, 0.2); /* Cyan faint line */
+    text-align: center;
+}
+
+.footer-signature {
+    position: absolute;
+    top: -12px; 
+    right: 0%; /* Right side alignment */
+    background: var(--bg); 
+    padding: 0 15px;
+}
+
+.footer-signature span {
+    font-size: 0.8rem;
+    color: var(--primary); 
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-transform: lowercase; /* Minimalist look */
+    opacity: 0.8;
+}
+footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--primary);
+}
+
+footer p {
+    font-size: 0.9rem;
+    word-wrap: break-word; /* Taaki line na kate */
+}
+
+/* Center align on Mobile*/
+@media (max-width: 768px) {
+    .footer-signature {
+        right: 50%;
+        transform: translateX(50%);
+        white-space: nowrap;
+    }
+}
+
+/* Section jump fix */
+section {
+    scroll-margin-top: 80px; 
+}
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 15px; 
+    }
+    .education .heading { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    /* 1. Navigation Menu (Vertical List) */
+    .nav-links {
+        display: none; /* Menu bar for Mobile  */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 17, 32, 0.95);
+        padding: 30px;
+        backdrop-filter: blur(15px);
+        border-bottom: 2px solid var(--primary);
+    }
+
+    /* 2. Contact Buttons (Stacking) */
+    .contact-btns {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    .c-btn {
+        width: 100%; /* Full width buttons on phone */
+        max-width: 300px;
+    }
+
+    /* 3. Education Card Fix */
+    .edu-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* 4. Footer Joint Note (Center align on mobile) */
+    .footer-signature {
+        right: 50%;
+        transform: translateX(50%);
+        white-space: nowrap;
+    }
+}
+
+
+.nav-links.active {
+    display: flex;
+}
+
+/*Strictly hide horizontal line */
+.section-title::after, 
+.education .heading::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Ensure that only vertical line shows */
+.section-title, 
+.education .heading {
+    border-left: 6px solid var(--primary); /* Cyan Vertical Line */
+    padding-left: 20px;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+/* =========================================
+   Mobile-Responsive (Screen < 768px)
+========================================= */
+@media (max-width: 768px) {
+    /* Standard Padding phones ke liye */
+    section {
+        padding: 60px 20px;
+    }
+
+    /* 1. Navigation Menu Fix */
+    .nav-links {
+        display: none; /* Desktop menu hide */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Nav height */
+        left: 0;
+        background-color: var(--bg-alt); /* Tumhare background color jaisa */
+        text-align: center;
+        border-bottom: 2px solid var(--primary);
+    }
+
+    .nav-links.active {
+        display: flex; /* Click karne par dikhega */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Hamburger Menu Icon styling */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #fff;
+    }
+
+    /* 2. Hero Section Fix */
+    .hero-container {
+        grid-template-columns: 1fr; /* Text aur content ek ke niche ek */
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem; /* Font chota */
+    }
+
+    .cta-btns {
+        flex-direction: column; /* Buttons ek ke niche ek */
+        gap: 15px;
+    }
+
+    /* 3. Education Card Fix */
+    .education {
+        padding: 60px 10%;
+    }
+
+    .edu-card {
+        width: 100%; /* Card ab screen ki poori width lega */
+        margin: 0 auto;
+    }
+
+    /* Titles Fix */
+    .section-title, .heading {
+        font-size: 2.2rem !important; /* Titles chote aur classy */
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Contact buttons ka container */
+    .contact-btns {
+        display: flex !important;
+        flex-direction: column !important; /* Ek ke niche ek */
+        align-items: center !important;    /* Poore buttons ko screen ke beech mein layega */
+        gap: 15px !important;              /* Buttons ke beech ka gap */
+        width: 100% !important;
+        padding: 0 20px !important;
+    }
+
+    /* 2. Saare buttons (Email, GitHub, LinkedIn, Instagram) */
+    .c-btn {
+        width: 100% !important;            /* Phone ki width ke hisaab se */
+        max-width: 280px !important;       /* Buttons zyada wide na hon */
+        display: flex !important;          /* Flexbox se icon aur text align karenge */
+        justify-content: center !important; /* Text aur Icon ko BEECH mein layega */
+        align-items: center !important;    /* Vertically center */
+        gap: 10px !important;              /* Icon aur Text ke beech ka gap */
+        text-align: center !important;
+        padding: 12px 20px !important;
+        margin: 0 auto !important;         /* Center alignment insurance */
+    }
+
+    /* 3. Icons ka size thoda adjust karne ke liye */
+    .c-btn i {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* PC/Laptop ke liye (Normal Desktop View) */
+.hero-btns {
+    display: flex;
+    flex-direction: row;       /* Buttons side-by-side rahenge */
+    justify-content: flex-start; /* Isse buttons Text ke niche Left mein rahenge */
+    gap: 25px;                 /* PC par bhi thoda gap badha diya */
+    margin-top: 30px;
+    width: 100%;
+}
+
+.hero-btns .btn {
+    width: auto;               /* PC par button apni natural width lega */
+    min-width: 180px;          /* Minimum size taaki chote na lagein */
+    text-align: center;
+}
+
+/* Mobile wala code jo humne pehle likha tha, wo waisa hi rahega */
+@media (max-width: 768px) {
+    .hero-btns {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;    
+        gap: 20px !important;
+        justify-content: center !important;
+    }
+    
+    .hero-btns .btn {
+        width: 250px !important;    
+    }
+}
